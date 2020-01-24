@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dalek</string>
+    <string name="load_random_post">Load random post</string>
+</resources>

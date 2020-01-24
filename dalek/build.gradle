@@ -1,0 +1,14 @@
+apply plugin: 'kotlin'
+
+compileKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+}
+
+dependencies {
+    ModuleLib.dalek.forEach { implementation it }
+
+    TestLib.all.forEach { testImplementation it }
+}

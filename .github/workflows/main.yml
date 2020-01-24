@@ -1,4 +1,4 @@
-name: Push & PR CI
+name: main
 
 on: [push, pull_request]
 

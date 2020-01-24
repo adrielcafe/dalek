@@ -48,25 +48,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showError(exception: Throwable) {
-        val message =
-            """
-            |ERROR!
-            |    
-            |$exception
-            """.trimMargin()
-
         vErrorState.apply {
             isVisible = true
-            text = message
+            text = exception.toString()
         }
-
-        exception.printStackTrace()
     }
 
     private fun setLoading(loading: Boolean) {
-        vPostTitle.isVisible = loading.not()
-        vPostBody.isVisible = loading.not()
-        vLoadPost.isVisible = loading.not()
+        listOf(vPostTitle, vPostBody, vLoadPost)
+            .forEach { it.isVisible = loading.not() }
 
         vLoadingState.isVisible = loading
 

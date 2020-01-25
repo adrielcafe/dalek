@@ -102,7 +102,7 @@ allprojects {
 2. Next, add the library to your module:
 ```gradle
 dependencies {
-    implementation "com.github.adrielcafe.dalek:dalek:$currentVersion"
+    implementation "com.github.adrielcafe:dalek:$currentVersion"
 }
 ```
 Current version: [![JitPack](https://img.shields.io/jitpack/v/github/adrielcafe/dalek.svg?style=flat-square)](https://jitpack.io/#adrielcafe/dalek)

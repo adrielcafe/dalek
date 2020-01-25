@@ -1,37 +1,43 @@
 package cafe.adriel.dalek
 
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import io.kotlintest.matchers.collections.shouldContainExactly
+import io.kotlintest.specs.StringSpec
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.runBlockingTest
-import org.junit.Assert.assertArrayEquals
-import org.junit.Test
 
-@ExperimentalCoroutinesApi
-class DalekTest {
+class DalekTest : StringSpec({
 
-    @Test
-    fun `should emit success event`() = runBlockingTest {
-        val message = "No power in the universe can stop the Daleks!"
+    suspend fun <T> evaluate(events: List<DalekEvent<T>>, action: suspend () -> T) {
+        val result = Dalek(TestCoroutineDispatcher(), action).toList()
 
-        val expectedEvents = arrayOf(Start, Success(message), Finish)
-
-        val emittedEvents = Dalek(TestCoroutineDispatcher()) {
-            message
-        }.toArray()
-
-        assertArrayEquals(expectedEvents, emittedEvents)
+        result shouldContainExactly events
     }
 
-    @Test
-    fun `should emit failure event`() = runBlockingTest {
+    "should emit success event when value is an object" {
+        val value = "No power in the universe can stop the Daleks!"
+        val events = listOf(Start, Success(value), Finish)
+
+        evaluate(events) { value }
+    }
+
+    "should emit success event when value is null" {
+        val value = null
+        val events = listOf(Start, Success(value), Finish)
+
+        evaluate(events) { value }
+    }
+
+    "should emit success event when value is Unit" {
+        val value = Unit
+        val events = listOf(Start, Success(value), Finish)
+
+        evaluate(events) { value }
+    }
+
+    "should emit failure event when throw exception" {
         val exception = RuntimeException("Exterminate! Exterminate! Exterminate!")
+        val events = listOf(Start, Failure(exception), Finish)
 
-        val expectedEvents = arrayOf(Start, Failure(exception), Finish)
-
-        val emittedEvents = Dalek(TestCoroutineDispatcher()) {
-            throw exception
-        }.toArray()
-
-        assertArrayEquals(expectedEvents, emittedEvents)
+        evaluate(events) { throw exception }
     }
-}
+})

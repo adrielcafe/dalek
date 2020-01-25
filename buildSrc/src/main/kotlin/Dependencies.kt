@@ -14,7 +14,7 @@ internal object Version {
     const val ACTIVITY = "1.1.0"
     const val FUEL = "2.2.1"
 
-    const val TEST_JUNIT = "4.12"
+    const val TEST_KOTLIN_RUNNER = "3.4.2"
 }
 
 object ProjectLib {
@@ -34,21 +34,21 @@ object ModuleLib {
     const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Version.SERIALIZATION}"
 
     const val APP_COMPAT = "androidx.appcompat:appcompat:${Version.APP_COMPAT}"
-    const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
     const val ACTIVITY_KTX = "androidx.activity:activity-ktx:${Version.ACTIVITY}"
+    const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
     const val FUEL_CORE = "com.github.kittinunf.fuel:fuel:${Version.FUEL}"
     const val FUEL_COROUTINES = "com.github.kittinunf.fuel:fuel-coroutines:${Version.FUEL}"
     const val FUEL_SERIALIZATION = "com.github.kittinunf.fuel:fuel-kotlinx-serialization:${Version.FUEL}"
 
     val dalek = setOf(KOTLIN, COROUTINES_CORE)
 
-    val sample = setOf(KOTLIN, COROUTINES_ANDROID, SERIALIZATION, APP_COMPAT,
-        LIFECYCLE_VIEWMODEL, ACTIVITY_KTX, FUEL_CORE, FUEL_COROUTINES, FUEL_SERIALIZATION)
+    val sample = setOf(KOTLIN, COROUTINES_ANDROID, SERIALIZATION, APP_COMPAT, ACTIVITY_KTX,
+        LIFECYCLE_VIEWMODEL_KTX, FUEL_CORE, FUEL_COROUTINES, FUEL_SERIALIZATION)
 }
 
 object TestLib {
-    const val JUNIT = "junit:junit:${Version.TEST_JUNIT}"
+    const val KOTLIN_RUNNER = "io.kotlintest:kotlintest-runner-junit5:${Version.TEST_KOTLIN_RUNNER}"
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.COROUTINES}"
 
-    val all = setOf(JUNIT, COROUTINES)
+    val all = setOf(KOTLIN_RUNNER, COROUTINES)
 }

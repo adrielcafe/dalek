@@ -2,8 +2,8 @@
 
 [![JitPack](https://img.shields.io/jitpack/v/github/adrielcafe/dalek.svg?style=for-the-badge)](https://jitpack.io/#adrielcafe/dalek)
 [![Github Actions](https://img.shields.io/github/workflow/status/adrielcafe/dalek/main/master?style=for-the-badge)](https://github.com/adrielcafe/dalek/actions)
-[![Android API](https://img.shields.io/badge/api-16%2B-brightgreen.svg?style=for-the-badge)](https://android-arsenal.com/api?level=16)
-[![Kotlin](https://img.shields.io/github/languages/top/adrielcafe/dalek.svg?style=for-the-badge)](https://kotlinlang.org/)
+[![Android API](https://img.shields.io/badge/api-16%2B-yellowgreen.svg?style=for-the-badge)](https://android-arsenal.com/api?level=16)
+[![Kotlin](https://img.shields.io/github/languages/top/adrielcafe/dalek.svg?style=for-the-badge&color=orange)](https://kotlinlang.org/)
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg?style=for-the-badge)](https://ktlint.github.io/)
 [![License MIT](https://img.shields.io/github/license/adrielcafe/dalek.svg?style=for-the-badge&color=yellow)](https://opensource.org/licenses/MIT)
 

@@ -8,7 +8,7 @@
 [![License MIT](https://img.shields.io/github/license/adrielcafe/dalek.svg?style=for-the-badge&color=yellow)](https://opensource.org/licenses/MIT)
 
 # Dalek
-Dalek is a [tiny](https://github.com/adrielcafe/Dalek/blob/master/dalek/src/main/java/cafe/adriel/dalek/Dalek.kt) (~10 LOC) [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine) that helps you manage the UI state of your app when doing async/breakable tasks.
+Dalek is a [tiny](https://github.com/adrielcafe/Dalek/blob/master/dalek/src/main/java/cafe/adriel/dalek/Dalek.kt) (~10 LOC) [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine) that helps you manage the UI state of your app when running async/breakable tasks.
 
 It's powered by [Coroutines Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/).
 
@@ -23,7 +23,7 @@ It's powered by [Coroutines Flow](https://kotlin.github.io/kotlinx.coroutines/ko
 #### Why *Dalek*?
 [Daleks](https://en.wikipedia.org/wiki/Dalek) are a fictional extraterrestrial race of mutants portrayed in [Doctor Who](https://en.wikipedia.org/wiki/Doctor_Who).
 
-They are creatures living inside a tank-like robotic shell, and this is basically how this library works: your code (the "creature") is wrapped and executed inside a state machine (the "robotic shell").
+They are creatures that live inside a tank-like robotic shell, and this is basically how this library works: your code (the "creature") is wrapped and executed inside a state machine (the "robotic shell").
 
 ## Motivation
 Let's imagine the following scenario: you need to retrieve a `Post` object from a REST API, something like:

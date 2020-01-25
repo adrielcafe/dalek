@@ -1,6 +1,8 @@
 apply plugin: 'kotlin'
 apply plugin: 'maven'
 
+group = Maven.GROUP_ID
+
 compileKotlin {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 }

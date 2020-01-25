@@ -25,6 +25,10 @@ It's powered by [Coroutines Flow](https://kotlin.github.io/kotlinx.coroutines/ko
 
 They are creatures that live inside a tank-like robotic shell, and this is basically how this library works: your code (the "creature") is wrapped and executed inside a state machine (the "robotic shell").
 
+<p align="center">
+    <i>"EXTERMINATE! EXTERMINATE! EXTERMINATE!"<br>(Any Dalek will say that)</i>
+</p>
+
 ## Motivation
 Let's imagine the following scenario: you need to retrieve a `Post` object from a REST API, something like:
 

@@ -7,10 +7,10 @@ import kotlinx.coroutines.test.TestCoroutineDispatcher
 
 class DalekTest : StringSpec({
 
-    suspend fun <T> evaluate(events: List<DalekEvent<T>>, action: suspend () -> T) {
-        val result = Dalek(TestCoroutineDispatcher(), action).toList()
+    suspend fun <T> evaluate(expectedEvents: List<DalekEvent<T>>, action: suspend () -> T) {
+        val emittedEvents = Dalek(TestCoroutineDispatcher(), action).toList()
 
-        result shouldContainExactly events
+        emittedEvents shouldContainExactly expectedEvents
     }
 
     "should emit success event when value is an object" {
@@ -34,8 +34,8 @@ class DalekTest : StringSpec({
         evaluate(events) { value }
     }
 
-    "should emit failure event when throw exception" {
-        val exception = RuntimeException("Exterminate! Exterminate! Exterminate!")
+    "should emit failure event when throw an exception" {
+        val exception = IllegalStateException("Exterminate! Exterminate! Exterminate!")
         val events = listOf(Start, Failure(exception), Finish)
 
         evaluate(events) { throw exception }

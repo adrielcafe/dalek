@@ -27,6 +27,13 @@ class DalekTest : StringSpec({
         evaluate(events) { value }
     }
 
+    "should emit success event when value is Any" {
+        val value = "Obey!" as Any
+        val events = listOf(Start, Success(value), Finish)
+
+        evaluate(events) { value }
+    }
+
     "should emit success event when value is Unit" {
         val value = Unit
         val events = listOf(Start, Success(value), Finish)
@@ -35,7 +42,7 @@ class DalekTest : StringSpec({
     }
 
     "should emit failure event when throw an exception" {
-        val exception = IllegalStateException("Exterminate! Exterminate! Exterminate!")
+        val exception = IllegalStateException("Exterminate!")
         val events = listOf(Start, Failure(exception), Finish)
 
         evaluate(events) { throw exception }

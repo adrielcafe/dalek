@@ -52,7 +52,7 @@ This is a nightmare, right? Calm down! Dalek is here to help :robot:
 ### 1. Wrap your code inside Dalek
 To start using Dalek, you just need to wrap your existing code inside it.
 
-Dalek will run your code inside a `suspend fun` and return a `Flow<DalekEvent<T>>`, where `T` is the output of your code (yes, you can return `null`, `Unit` and `Any`).
+Dalek will run your code inside a `suspend fun` and return a `Flow<DalekEvent<T>>`, where `T` is the output of your code (you can return `null`, `Unit` and `Any`, I won't judge you).
 
 ```kotlin
 class MyViewModel(repository: PostRepository) : ViewModel() {
@@ -65,7 +65,7 @@ class MyViewModel(repository: PostRepository) : ViewModel() {
 ```
 
 ### 2. Handle the UI events
-The emitted events by Dalek are:
+Dalek emits the following events:
 
 * `Start`: always emitted
 * `Success(value: T)`: only emitted when your code is successfully executed

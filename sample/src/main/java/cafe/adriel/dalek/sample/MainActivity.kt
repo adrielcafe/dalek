@@ -9,7 +9,7 @@ import cafe.adriel.dalek.Failure
 import cafe.adriel.dalek.Finish
 import cafe.adriel.dalek.Start
 import cafe.adriel.dalek.Success
-import cafe.adriel.dalek.launchAndCollect
+import cafe.adriel.dalek.collectWith
 import cafe.adriel.dalek.sample.network.Post
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadRandomPost() {
         viewModel.getRandomPost()
-            .launchAndCollect(lifecycleScope) { event ->
+            .collectWith(lifecycleScope) { event ->
                 when (event) {
                     is Start -> setLoading(true)
                     is Success -> showPost(event.value)

@@ -77,7 +77,7 @@ class MyActivity : AppCompatActivity() {
 
     private fun loadPost(id: String) {
         viewModel.getPost(id)
-            .launchAndCollect(lifecycleScope) { event ->
+            .collectWith(lifecycleScope) { event ->
                 when (event) {
                     is Start -> setLoading(true)
                     is Success -> showPost(event.value)

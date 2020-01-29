@@ -8,11 +8,11 @@ internal object Version {
     const val KOTLIN = "1.3.61"
     const val COROUTINES = "1.3.3"
     const val SERIALIZATION = "0.14.0"
+    const val KTOR = "1.3.0"
 
     const val APP_COMPAT = "1.1.0"
     const val LIFECYCLE = "2.2.0"
     const val ACTIVITY = "1.1.0"
-    const val FUEL = "2.2.1"
 
     const val TEST_KOTLIN_RUNNER = "3.4.2"
 }
@@ -32,18 +32,17 @@ object ModuleLib {
     const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES}"
     const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.COROUTINES}"
     const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Version.SERIALIZATION}"
+    const val KTOR = "io.ktor:ktor-client-android:${Version.KTOR}"
+    const val KTOR_SERIALIZATION = "io.ktor:ktor-client-serialization-jvm:${Version.KTOR}"
 
     const val APP_COMPAT = "androidx.appcompat:appcompat:${Version.APP_COMPAT}"
     const val ACTIVITY_KTX = "androidx.activity:activity-ktx:${Version.ACTIVITY}"
     const val LIFECYCLE_VIEWMODEL_KTX = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
-    const val FUEL_CORE = "com.github.kittinunf.fuel:fuel:${Version.FUEL}"
-    const val FUEL_COROUTINES = "com.github.kittinunf.fuel:fuel-coroutines:${Version.FUEL}"
-    const val FUEL_SERIALIZATION = "com.github.kittinunf.fuel:fuel-kotlinx-serialization:${Version.FUEL}"
 
     val dalek = setOf(KOTLIN, COROUTINES_CORE)
 
-    val sample = setOf(KOTLIN, COROUTINES_ANDROID, SERIALIZATION, APP_COMPAT, ACTIVITY_KTX,
-        LIFECYCLE_VIEWMODEL_KTX, FUEL_CORE, FUEL_COROUTINES, FUEL_SERIALIZATION)
+    val sample = setOf(KOTLIN, COROUTINES_ANDROID, SERIALIZATION, KTOR, KTOR_SERIALIZATION,
+        APP_COMPAT, ACTIVITY_KTX, LIFECYCLE_VIEWMODEL_KTX)
 }
 
 object TestLib {

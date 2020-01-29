@@ -55,7 +55,7 @@ To start using Dalek, you just need to wrap your existing code inside it.
 Dalek will run your code inside a `suspend fun` and return a `Flow<DalekEvent<T>>`, where `T` is the output of your code (you can return `null`, `Unit` and `Any`, I won't judge you).
 
 ```kotlin
-class MyViewModel(repository: PostRepository) : ViewModel() {
+class MyViewModel(private val repository: PostRepository) : ViewModel() {
 
     fun getPost(id: String): Flow<DalekEvent<Post>> =
         Dalek(Dispatchers.IO) {
@@ -65,7 +65,7 @@ class MyViewModel(repository: PostRepository) : ViewModel() {
 ```
 
 ### 2. Handle the UI events
-Dalek emits the following events:
+Dalek will emit the following events:
 
 * `Start`: always emitted
 * `Success(value: T)`: only emitted when your code is successfully executed

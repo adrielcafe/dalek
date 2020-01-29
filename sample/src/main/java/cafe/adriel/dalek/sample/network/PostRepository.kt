@@ -1,8 +1,6 @@
 package cafe.adriel.dalek.sample.network
 
-import com.github.kittinunf.fuel.Fuel
-import com.github.kittinunf.fuel.coroutines.awaitObject
-import com.github.kittinunf.fuel.serialization.kotlinxDeserializerOf
+import io.ktor.client.request.get
 import kotlin.random.Random
 
 object PostRepository {
@@ -16,6 +14,5 @@ object PostRepository {
         get() = POST_URL.format(randomPostId)
 
     suspend fun getRandomPost(): Post =
-        Fuel.get(randomPostUrl)
-            .awaitObject(kotlinxDeserializerOf(Post.serializer()))
+        httpClient.get(randomPostUrl)
 }

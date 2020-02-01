@@ -10,15 +10,7 @@
 # Dalek
 Dalek is a [tiny](https://github.com/adrielcafe/Dalek/blob/master/dalek/src/main/java/cafe/adriel/dalek/Dalek.kt) (~10 LOC) [finite state machine](https://en.wikipedia.org/wiki/Finite-state_machine) that helps you manage the UI state of your app when running async/breakable tasks.
 
-It's powered by [Coroutines Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/).
-
-#### Platform compatibility
-
-| JVM | Android | iOS | JS | Native |
-|-----|---------|-----|----|--------|
-| ✔   | ✔       | ✗   | ✗  | ✗      |
-
-*Working on multiplatform support*
+It's powered by [Coroutines Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) and works on Android & JVM.
 
 #### Why *Dalek*?
 [Daleks](https://en.wikipedia.org/wiki/Dalek) are a fictional extraterrestrial race of mutants portrayed in [Doctor Who](https://en.wikipedia.org/wiki/Doctor_Who).
@@ -77,7 +69,7 @@ class MyActivity : AppCompatActivity() {
 
     private fun loadPost(id: String) {
         viewModel.getPost(id)
-            .collectWith(lifecycleScope) { event ->
+            .collectIn(lifecycleScope) { event ->
                 when (event) {
                     is Start -> setLoading(true)
                     is Success -> showPost(event.value)

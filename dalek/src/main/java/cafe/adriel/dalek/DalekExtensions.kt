@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-fun <T> Flow<T>.collectWith(
+fun <T> Flow<T>.collectIn(
     scope: CoroutineScope,
     action: suspend (value: T) -> Unit
 ): Job =

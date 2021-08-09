@@ -5,10 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import cafe.adriel.dalek.Failure
-import cafe.adriel.dalek.Finish
-import cafe.adriel.dalek.Start
-import cafe.adriel.dalek.Success
+import cafe.adriel.dalek.DalekEvent
 import cafe.adriel.dalek.collectIn
 import cafe.adriel.dalek.sample.network.Post
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.getRandomPost()
             .collectIn(lifecycleScope) { event ->
                 when (event) {
-                    is Start -> setLoading(true)
-                    is Success -> showPost(event.value)
-                    is Failure -> showError(event.exception)
-                    is Finish -> setLoading(false)
+                    is DalekEvent.Start -> setLoading(true)
+                    is DalekEvent.Success -> showPost(event.value)
+                    is DalekEvent.Failure -> showError(event.exception)
+                    is DalekEvent.Finish -> setLoading(false)
                 }
             }
     }

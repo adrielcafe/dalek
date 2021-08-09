@@ -14,7 +14,7 @@ internal object Version {
     const val LIFECYCLE = "2.3.1"
     const val ACTIVITY = "1.3.1"
 
-    const val TEST_KOTLIN_RUNNER = "3.4.2"
+    const val TEST_KOTEST_RUNNER = "4.6.1"
 }
 
 object ProjectLib {
@@ -46,8 +46,8 @@ object ModuleLib {
 }
 
 object TestLib {
-    const val KOTLIN_RUNNER = "io.kotlintest:kotlintest-runner-junit5:${Version.TEST_KOTLIN_RUNNER}"
+    const val KOTEST_RUNNER = "io.kotest:kotest-runner-junit5:${Version.TEST_KOTEST_RUNNER}"
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.COROUTINES}"
 
-    val all = setOf(KOTLIN_RUNNER, COROUTINES)
+    val all = setOf(KOTEST_RUNNER, COROUTINES)
 }

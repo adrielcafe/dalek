@@ -1,18 +1,18 @@
 @file:Suppress("Unused", "MayBeConstant", "MemberVisibilityCanBePrivate")
 
 internal object Version {
-    const val GRADLE_ANDROID = "3.5.2"
-    const val GRADLE_KTLINT = "9.1.1"
-    const val GRADLE_VERSIONS = "0.27.0"
+    const val GRADLE_ANDROID = "7.0.0"
+    const val GRADLE_KTLINT = "10.1.0"
+    const val GRADLE_VERSIONS = "0.39.0"
 
-    const val KOTLIN = "1.3.61"
-    const val COROUTINES = "1.3.3"
-    const val SERIALIZATION = "0.14.0"
-    const val KTOR = "1.3.0"
+    const val KOTLIN = "1.5.21"
+    const val COROUTINES = "1.5.1"
+    const val SERIALIZATION = "1.2.2"
+    const val KTOR = "1.6.2"
 
-    const val APP_COMPAT = "1.1.0"
-    const val LIFECYCLE = "2.2.0"
-    const val ACTIVITY = "1.1.0"
+    const val APP_COMPAT = "1.3.1"
+    const val LIFECYCLE = "2.3.1"
+    const val ACTIVITY = "1.3.1"
 
     const val TEST_KOTLIN_RUNNER = "3.4.2"
 }
@@ -31,7 +31,7 @@ object ModuleLib {
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Version.KOTLIN}"
     const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES}"
     const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.COROUTINES}"
-    const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${Version.SERIALIZATION}"
+    const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Version.SERIALIZATION}"
     const val KTOR = "io.ktor:ktor-client-android:${Version.KTOR}"
     const val KTOR_SERIALIZATION = "io.ktor:ktor-client-serialization-jvm:${Version.KTOR}"
 

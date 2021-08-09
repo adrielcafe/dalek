@@ -1,8 +1,6 @@
 apply plugin: 'kotlin'
 apply plugin: 'maven-publish'
 
-group = Maven.GROUP_ID
-
 compileKotlin {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
 }
@@ -18,4 +16,17 @@ dependencies {
     ModuleLib.dalek.forEach { implementation it }
 
     TestLib.all.forEach { testImplementation it }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+
+                groupId = Maven.GROUP_ID
+                artifactId = Maven.ARTIFACT_ID
+            }
+        }
+    }
 }
